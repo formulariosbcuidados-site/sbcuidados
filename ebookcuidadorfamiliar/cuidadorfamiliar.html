@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="E-book Prático do Cuidador Familiar - Orientações práticas e humanas para cuidar de idosos com segurança, leveza e qualidade de vida.">
+<title>Cuidador Familiar | SB Cuidados</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --verde-escuro: #27361F;
+    --verde-medio: #3d5230;
+    --verde-sage: #818F82;
+    --verde-sage-light: #a8b5a9;
+    --verde-bg: #f0f2ee;
+    --verde-bg2: #e8ede6;
+    --laranja: #c8622a;
+    --laranja-light: #d97a42;
+    --creme: #f9f7f3;
+    --branco: #ffffff;
+    --texto-escuro: #1a2214;
+    --texto-medio: #4a5a42;
+    --radius: 16px;
+    --radius-sm: 8px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', Helvetica, Arial, sans-serif;
+    background: var(--creme);
+    color: var(--texto-escuro);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; height: auto; display: block; }
+
+  /* ── TOPBAR ── */
+  .topbar {
+    background: var(--verde-escuro);
+    color: #fff;
+    text-align: center;
+    font-size: 0.78rem;
+    padding: 8px 16px;
+    letter-spacing: 0.04em;
+    font-weight: 500;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--creme);
+    padding: 48px 24px 56px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #d8e2d4 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--verde-bg);
+    color: var(--verde-escuro);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 40px;
+    border: 1px solid var(--verde-sage-light);
+  }
+
+  .hero-badge span { color: var(--verde-sage); }
+
+  .hero-content { text-align: center; }
+
+  .hero-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.9rem, 6vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--verde-escuro);
+    margin-bottom: 16px;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--laranja);
+  }
+
+  .hero-desc {
+    font-size: 0.95rem;
+    color: var(--texto-medio);
+    margin-bottom: 28px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* book mockup */
+  .hero-book {
+    width: min(220px, 60vw);
+    background: var(--verde-escuro);
+    border-radius: 12px;
+    padding: 28px 22px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    box-shadow: 0 24px 60px rgba(39,54,31,0.35), 0 4px 12px rgba(39,54,31,0.2);
+    flex-shrink: 0;
+  }
+
+  .hero-book::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-book .book-tag {
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--verde-sage-light);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .hero-book .book-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.25;
+    margin-bottom: 20px;
+  }
+
+  .hero-book .book-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 16px;
+    opacity: 0.85;
+  }
+
+  .hero-book .book-subtitle {
+    font-size: 0.65rem;
+    color: var(--verde-sage-light);
+    letter-spacing: 0.04em;
+  }
+
+  .book-access-badge {
+    position: absolute;
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--laranja);
+    color: #fff;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 20px;
+    white-space: nowrap;
+    box-shadow: 0 4px 14px rgba(200,98,42,0.45);
+  }
+
+  /* price area */
+  .price-block {
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  .price-old {
+    font-size: 0.8rem;
+    color: var(--verde-sage);
+    text-decoration: line-through;
+    margin-bottom: 4px;
+  }
+
+  .price-new {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--verde-escuro);
+  }
+
+  .price-new strong { font-size: 1rem; vertical-align: super; font-weight: 600; }
+  .price-new span { font-size: 0.85rem; font-weight: 400; }
+
+  .price-note {
+    font-size: 0.72rem;
+    color: var(--verde-sage);
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  /* CTA Button */
+  .btn-cta {
+    display: block;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    background: var(--laranja);
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+    padding: 18px 24px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 28px rgba(200,98,42,0.4);
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-cta::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(200,98,42,0.5); background: #d96f35; }
+  .btn-cta:active { transform: translateY(0); }
+
+  .guarantee {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    color: var(--verde-sage);
+    margin-top: 10px;
+  }
+
+  /* ── SECTION BASE ── */
+  section { padding: 64px 24px; }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--verde-sage);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    line-height: 1.2;
+    color: var(--verde-escuro);
+    margin-bottom: 12px;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--laranja);
+  }
+
+  .section-sub {
+    font-size: 0.9rem;
+    color: var(--texto-medio);
+    max-width: 560px;
+  }
+
+  /* ── EMPATHY ── */
+  .empathy {
+    background: var(--verde-bg);
+    text-align: center;
+  }
+
+  .empathy .section-title em {
+    font-style: italic;
+    color: var(--laranja);
+    display: block;
+    font-size: 1.1em;
+  }
+
+  .empathy-feelings {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    max-width: 400px;
+    margin: 28px auto 24px;
+    text-align: left;
+  }
+
+  .feeling-tag {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    border: 1px solid #dce5d9;
+    border-radius: 40px;
+    padding: 8px 14px;
+    font-size: 0.82rem;
+    color: var(--texto-medio);
+  }
+
+  .feeling-tag .dot {
+    width: 8px; height: 8px;
+    background: var(--verde-sage);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .empathy-text {
+    font-size: 0.9rem;
+    color: var(--texto-medio);
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .empathy-text strong { color: var(--verde-escuro); }
+
+  /* ── AUTHOR ── */
+  .author {
+    background: var(--creme);
+  }
+
+  .author-card {
+    background: var(--verde-escuro);
+    border-radius: var(--radius);
+    padding: 40px 28px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .author-avatar {
+    width: 90px; height: 90px;
+    border-radius: 50%;
+    background: var(--verde-sage);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-style: italic;
+    color: #fff;
+    flex-shrink: 0;
+    border: 3px solid rgba(255,255,255,0.2);
+  }
+
+  .author-info { text-align: center; }
+
+  .author-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .author-title {
+    font-size: 0.78rem;
+    color: var(--verde-sage-light);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .author-bullets {
+    list-style: none;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .author-bullets li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.5;
+  }
+
+  .author-bullets li::before {
+    content: '';
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: var(--laranja);
+    flex-shrink: 0;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10px;
+  }
+
+  .author-quote {
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 20px;
+    font-style: italic;
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  /* ── CONTENTS ── */
+  .contents {
+    background: var(--verde-escuro);
+    color: #fff;
+    text-align: left;
+  }
+
+  .contents .section-label { color: var(--verde-sage-light); }
+  .contents .section-title { color: #fff; }
+  .contents .section-title em { color: var(--verde-sage-light); }
+
+  .contents-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 32px;
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .content-item {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-sm);
+    padding: 16px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .content-item .icon {
+    width: 28px; height: 28px;
+    background: var(--laranja);
+    border-radius: 6px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: #fff;
+    font-weight: 700;
+  }
+
+  .content-item p {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.45;
+  }
+
+  /* ── FOR WHOM ── */
+  .forwhom {
+    background: var(--creme);
+  }
+
+  .forwhom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .forwhom-card {
+    border-radius: var(--radius);
+    padding: 24px 20px;
+  }
+
+  .forwhom-card.yes {
+    background: var(--verde-bg2);
+    border: 1px solid #c8d9c4;
+  }
+
+  .forwhom-card.no {
+    background: #fdf0eb;
+    border: 1px solid #f0c8b4;
+  }
+
+  .forwhom-card h3 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .forwhom-card.yes h3 { color: var(--verde-escuro); }
+  .forwhom-card.no h3 { color: #8b3a1a; }
+
+  .forwhom-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .forwhom-list li {
+    font-size: 0.8rem;
+    color: var(--texto-medio);
+    line-height: 1.4;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .forwhom-list li .mark {
+    font-size: 0.7rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .forwhom-card.yes .mark { color: var(--verde-escuro); }
+  .forwhom-card.no .mark { color: #c0471a; }
+
+  /* ── BONUS ── */
+  .bonus {
+    background: var(--verde-bg);
+    text-align: center;
+  }
+
+  .bonus .section-title em { display: block; color: var(--laranja); }
+
+  .bonus-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 32px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .bonus-card {
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 24px 18px;
+    text-align: center;
+    border: 1px solid #dce5d9;
+    box-shadow: 0 2px 12px rgba(39,54,31,0.06);
+  }
+
+  .bonus-icon {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  .bonus-card h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--verde-escuro);
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+
+  .bonus-card p {
+    font-size: 0.75rem;
+    color: var(--texto-medio);
+    line-height: 1.5;
+  }
+
+  .bonus-note {
+    margin-top: 24px;
+    background: var(--verde-escuro);
+    color: rgba(255,255,255,0.85);
+    border-radius: var(--radius-sm);
+    padding: 14px 20px;
+    font-size: 0.78rem;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+  }
+
+  .bonus-note strong { color: #fff; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials {
+    background: var(--creme);
+    text-align: center;
+  }
+
+  .testimonials-subtitle {
+    font-size: 0.85rem;
+    color: var(--texto-medio);
+    margin-bottom: 32px;
+  }
+
+  .testimonials-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .testimonial {
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 24px 20px;
+    text-align: left;
+    border: 1px solid #e4ebe0;
+    box-shadow: 0 2px 12px rgba(39,54,31,0.06);
+  }
+
+  .stars {
+    color: #e8a830;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
+
+  .testimonial p {
+    font-size: 0.85rem;
+    color: var(--texto-medio);
+    line-height: 1.6;
+    margin-bottom: 12px;
+    font-style: italic;
+  }
+
+  .testimonial-author {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--verde-escuro);
+  }
+
+  /* ── FAQ ── */
+  .faq {
+    background: var(--verde-bg);
+    text-align: center;
+  }
+
+  .faq .section-title em { color: var(--laranja); }
+
+  .faq-list {
+    margin-top: 32px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+  }
+
+  .faq-item {
+    background: #fff;
+    border-radius: var(--radius-sm);
+    border: 1px solid #dce5d9;
+    overflow: hidden;
+  }
+
+  .faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 18px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--verde-escuro);
+    text-align: left;
+    gap: 12px;
+  }
+
+  .faq-arrow {
+    width: 22px; height: 22px;
+    background: var(--verde-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.3s, background 0.3s;
+    color: var(--verde-escuro);
+    font-size: 0.75rem;
+  }
+
+  .faq-item.open .faq-arrow {
+    transform: rotate(180deg);
+    background: var(--verde-escuro);
+    color: #fff;
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  .faq-answer-inner {
+    padding: 0 20px 18px;
+    font-size: 0.84rem;
+    color: var(--texto-medio);
+    line-height: 1.65;
+  }
+
+  /* ── CTA FINAL ── */
+  .cta-final {
+    background: var(--verde-escuro);
+    color: #fff;
+    text-align: center;
+    padding: 72px 24px;
+  }
+
+  .cta-final .section-label { color: var(--verde-sage-light); }
+  .cta-final .section-title { color: #fff; }
+  .cta-final .section-title em { color: var(--verde-sage-light); }
+
+  .cta-final .section-sub { color: rgba(255,255,255,0.7); margin: 0 auto 40px; }
+
+  .cta-box {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: var(--radius);
+    padding: 36px 28px;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .cta-box-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+
+  .cta-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 6px;
+  }
+
+  .cta-tags {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+    margin-top: 8px;
+  }
+
+  .cta-tag {
+    font-size: 0.68rem;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.75);
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+
+  .cta-price-old {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.45);
+    text-decoration: line-through;
+    margin-bottom: 4px;
+  }
+
+  .cta-price-new {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .cta-price-new sup { font-size: 1rem; vertical-align: super; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--texto-escuro);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 32px 24px;
+    font-size: 0.72rem;
+    line-height: 1.6;
+  }
+
+  footer .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 12px;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── SB LOGO SVG ── */
+  .sb-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    padding: 16px 24px;
+  }
+
+  .sb-logo-text {
+    font-family: 'DM Sans', Helvetica, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    color: var(--verde-escuro);
+  }
+
+  .nav-bar {
+    background: #fff;
+    border-bottom: 1px solid #e4ebe0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 12px rgba(39,54,31,0.06);
+  }
+
+  /* ── DIVIDERS ── */
+  .wave-divider {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .wave-divider svg { display: block; width: 100%; }
+
+  /* ── UTILITY ── */
+  .center { text-align: center; }
+
+  .mt-8 { margin-top: 8px; }
+  .mt-16 { margin-top: 16px; }
+  .mt-24 { margin-top: 24px; }
+  .mt-32 { margin-top: 32px; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate { animation: fadeUp 0.6s ease forwards; }
+  .delay-1 { animation-delay: 0.15s; }
+  .delay-2 { animation-delay: 0.3s; }
+  .delay-3 { animation-delay: 0.45s; }
+
+  /* ── RESPONSIVE ── */
+  @media (min-width: 600px) {
+    .hero {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: 72px 48px;
+      gap: 60px;
+    }
+    .hero-content { text-align: left; }
+    .hero-content .btn-cta { margin: 0; }
+    .hero-content .price-note { justify-content: flex-start; }
+    .hero-content .guarantee { justify-content: flex-start; }
+
+    .bonus-grid { grid-template-columns: repeat(4, 1fr); }
+    .forwhom-grid { max-width: 560px; margin: 32px auto 0; }
+    .testimonials-grid { flex-direction: row; }
+    .author-card { flex-direction: row; align-items: flex-start; text-align: left; }
+    .author-info { text-align: left; }
+    .author-bullets li { }
+    .contents { padding-left: 48px; padding-right: 48px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">✦ Compra segura &nbsp;·&nbsp; Acesso imediato &nbsp;·&nbsp; Satisfação garantida ✦</div>
+
+<!-- NAV -->
+<nav class="nav-bar">
+  <a href="#" class="sb-logo">
+    <svg width="36" height="36" viewBox="0 0 100 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- S shape -->
+      <path d="M28 18 C28 18 50 10 62 24 C74 38 52 52 40 58 C28 64 20 76 30 88 C40 100 62 96 70 88" stroke="#27361F" stroke-width="7" stroke-linecap="round" fill="none"/>
+      <!-- B shape -->
+      <path d="M52 18 L52 88" stroke="#27361F" stroke-width="7" stroke-linecap="round"/>
+      <path d="M52 18 C52 18 72 18 72 34 C72 50 52 53 52 53" stroke="#27361F" stroke-width="7" stroke-linecap="round" fill="none"/>
+      <path d="M52 53 C52 53 74 53 74 70 C74 87 52 88 52 88" stroke="#27361F" stroke-width="7" stroke-linecap="round" fill="none"/>
+      <!-- drop -->
+      <ellipse cx="38" cy="70" rx="7" ry="9" fill="#818F82"/>
+    </svg>
+    <span class="sb-logo-text">CUIDADOS</span>
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content animate">
+    <div class="hero-badge">✦ <span>por Suzana Barbosa</span></div>
+
+    <h1 class="hero-title mt-16">
+      Cuidar de um idoso<br>
+      sem orientação pode<br>
+      gerar <em>exaustão,<br>culpa e insegurança…</em>
+    </h1>
+
+    <p class="hero-desc">
+      Descubra orientações práticas e humanas de quem atua há <strong>15 anos</strong> no cuidado com idosos e famílias. O <em>E-book Prático do Cuidador Familiar</em> foi criado para ajudar famílias e cuidadores a enfrentarem os desafios do cuidado diário com mais segurança, organização e acolhimento.
+    </p>
+
+    <div class="price-block">
+      <div class="price-old">De R$ 89,90</div>
+      <div class="price-new"><strong>R$</strong> 49<span>,90</span></div>
+      <div class="price-note">🔒 Pagamento 100% seguro</div>
+    </div>
+
+    <a href="#cta-final" class="btn-cta mt-16">🎯 QUERO TER ACESSO AGORA</a>
+    <div class="guarantee mt-8">✔ Oferta de lançamento por tempo limitado</div>
+  </div>
+
+  <div class="hero-book animate delay-2">
+    <div class="book-tag">E-book Prático do</div>
+    <div class="book-title">Cuidador<br>Familiar</div>
+    <!-- Illustrated silhouette -->
+    <svg class="book-icon" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- elder person seated -->
+      <circle cx="28" cy="18" r="9" stroke="rgba(255,255,255,0.6)" stroke-width="2.5"/>
+      <path d="M14 42 C14 30 42 30 42 42 L42 55 L14 55 Z" stroke="rgba(255,255,255,0.6)" stroke-width="2.5" fill="none"/>
+      <!-- caregiver standing -->
+      <circle cx="56" cy="16" r="7" stroke="rgba(255,255,255,0.85)" stroke-width="2.5"/>
+      <path d="M44 50 C44 38 68 38 68 50 L68 68 L44 68 Z" stroke="rgba(255,255,255,0.85)" stroke-width="2.5" fill="none"/>
+      <!-- hand holding gesture -->
+      <path d="M38 45 C42 45 46 43 46 43" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <div class="book-subtitle">Cuidado de Quem Você Ama em Casa</div>
+    <div class="book-access-badge">ACESSO IMEDIATO</div>
+  </div>
+</section>
+
+<!-- EMPATHY SECTION -->
+<section class="empathy">
+  <p class="section-label">Se você cuida de alguém…</p>
+  <h2 class="section-title">
+    <em>você sabe o quanto isso pesa.</em>
+  </h2>
+
+  <div class="empathy-feelings">
+    <div class="feeling-tag"><span class="dot"></span> Medo</div>
+    <div class="feeling-tag"><span class="dot"></span> Insegurança</div>
+    <div class="feeling-tag"><span class="dot"></span> Sobrecarga Emocional</div>
+    <div class="feeling-tag"><span class="dot"></span> Cansaço</div>
+    <div class="feeling-tag"><span class="dot"></span> Dúvidas Constantes</div>
+  </div>
+
+  <p class="empathy-text">
+    Foi pensando nisso que desenvolvi este material. Depois de <strong>15 anos atuando no cuidado com idosos e famílias</strong>, acompanhamento familiar e assistência humanizada, reuni orientações práticas e acessíveis para ajudar quem está vivendo essa realidade dentro de casa.
+  </p>
+</section>
+
+<!-- AUTHOR -->
+<section class="author">
+  <div style="text-align:center; margin-bottom:32px;">
+    <p class="section-label">Quem é Suzana Barbosa</p>
+    <h2 class="section-title">Cuidado humanizado <em>com propósito</em></h2>
+  </div>
+
+  <div class="author-card">
+    <div class="author-avatar">SB</div>
+    <div class="author-info">
+      <div class="author-name">Suzana Barbosa</div>
+      <div class="author-title">Especialista em Cuidados Humanizados</div>
+      <ul class="author-bullets">
+        <li>Empresária e fundadora da SB Cuidados</li>
+        <li>Cuidadora de idosos há 15 anos</li>
+        <li>Biomédica civil e secretária</li>
+        <li>Estudante de enfermagem e gerontologia</li>
+        <li>Palestrante e mentora</li>
+        <li>Especialista em cuidados humanizados</li>
+      </ul>
+      <p class="author-quote mt-16">
+        "Minha missão é ajudar família a cuidarem com mais segurança, dignidade e acolhimento."
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENTS -->
+<section class="contents">
+  <div style="max-width:860px; margin:0 auto;">
+  <p class="section-label">Conteúdo do E-book</p>
+  <h2 class="section-title">O que você vai <em>aprender</em></h2>
+  </div>
+
+  <div class="contents-grid">
+    <div class="content-item">
+      <div class="icon">📋</div>
+      <p>Organização da rotina do idoso</p>
+    </div>
+    <div class="content-item">
+      <div class="icon">💊</div>
+      <p>Cuidados básicos essenciais</p>
+    </div>
+    <div class="content-item">
+      <div class="icon">❤️</div>
+      <p>Como evitar sobrecarga emocional</p>
+    </div>
+    <div class="content-item">
+      <div class="icon">📅</div>
+      <p>Orientações práticas para o dia a dia</p>
+    </div>
+    <div class="content-item">
+      <div class="icon">⚠️</div>
+      <p>Sinais de alerta importantes</p>
+    </div>
+    <div class="content-item">
+      <div class="icon">🏠</div>
+      <p>Dicas para mais segurança dentro de casa</p>
+    </div>
+    <div class="content-item">
+      <div class="icon">🤝</div>
+      <p>Apoio emocional para familiares cuidadores</p>
+    </div>
+    <div class="content-item">
+      <div class="icon">🌟</div>
+      <p>Estratégias para melhorar qualidade de vida</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHOM -->
+<section class="forwhom">
+  <div style="text-align:center; margin-bottom:0;">
+    <p class="section-label">Para quem é</p>
+    <h2 class="section-title" style="margin-bottom:0;">Para quem é — e para quem não é</h2>
+  </div>
+
+  <div class="forwhom-grid">
+    <div class="forwhom-card yes">
+      <h3>✅ Para quem é</h3>
+      <ul class="forwhom-list">
+        <li><span class="mark">✓</span> Familiares que cuidam de idosos em casa</li>
+        <li><span class="mark">✓</span> Pessoas que estão começando no cuidado</li>
+        <li><span class="mark">✓</span> Cuidadores informais</li>
+        <li><span class="mark">✓</span> Filhos e familiares sobrecarregados</li>
+        <li><span class="mark">✓</span> Quem busca mais segurança no cuidado diário</li>
+      </ul>
+    </div>
+    <div class="forwhom-card no">
+      <h3>❌ Para quem não é</h3>
+      <ul class="forwhom-list">
+        <li><span class="mark">✗</span> Pessoas que procuram soluções mágicas</li>
+        <li><span class="mark">✗</span> Quem não deseja colocar orientações em prática</li>
+        <li><span class="mark">✗</span> Quem busca substituir atendimento médico profissional</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- BONUS -->
+<section class="bonus">
+  <p class="section-label">Você também recebe</p>
+  <h2 class="section-title">Bônus <em>exclusivos</em></h2>
+
+  <div class="bonus-grid">
+    <div class="bonus-card">
+      <div class="bonus-icon">📋</div>
+      <h4>Checklist do Cuidador</h4>
+      <p>Guia rápido para organizar a rotina e nunca esquecer o essencial</p>
+    </div>
+    <div class="bonus-card">
+      <div class="bonus-icon">👥</div>
+      <h4>Grupo Exclusivo</h4>
+      <p>Apoio, orientações e troca de experiências com outras famílias</p>
+    </div>
+    <div class="bonus-card">
+      <div class="bonus-icon">🎓</div>
+      <h4>Aula bônus</h4>
+      <p>A melhor aula que sua família já assistiu sobre cuidados com idosos</p>
+    </div>
+  </div>
+
+  <p class="bonus-note mt-24">
+    <strong>Importante:</strong> os bônus e conteúdos complementares estão liberados gratuitamente para melhor aproveitamento da experiência.
+  </p>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <p class="section-label">Famílias que já cuidam melhor</p>
+  <h2 class="section-title">Quem aplica, <em>sente a diferença</em></h2>
+  <p class="testimonials-subtitle">Depoimentos reais de quem já transformou o cuidado com o ebook</p>
+
+  <div class="testimonials-grid">
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p>"Eu me sentia perdida cuidando do meu pai. Hoje tenho muito mais leveza e organização na rotina."</p>
+      <span class="testimonial-author">— Marina S.</span>
+    </div>
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p>"Conteúdo super humano e prático. Recomendo para qualquer família que cuida de idosos com amor."</p>
+      <span class="testimonial-author">— Carlos R.</span>
+    </div>
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p>"Suzana nos deu o apoio emocional que nos faltava. Não nos sentimos mais sós nessa jornada."</p>
+      <span class="testimonial-author">— Juliana M.</span>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <p class="section-label">Tirando suas dúvidas</p>
+  <h2 class="section-title">Quebrando <em>objeções</em></h2>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Mas eu não tenho experiência...
+        <span class="faq-arrow">▾</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Este e-book foi criado exatamente para quem está começando. As orientações são simples, práticas e escritas em linguagem acessível para qualquer familiar, sem precisar de formação na área da saúde.
+        </div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        E se eu não tiver dinheiro?
+        <span class="faq-arrow">▾</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Por apenas R$ 49,90 — menos do que uma consulta médica particular — você tem acesso a um material completo com orientações que podem evitar crises, hospitalizações desnecessárias e muito sofrimento emocional para toda a família.
+        </div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        O conteúdo é muito técnico?
+        <span class="faq-arrow">▾</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Não! O e-book foi escrito para familiares, não para profissionais de saúde. Tudo é explicado de forma simples, com exemplos práticos do dia a dia do cuidado em casa.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final" id="cta-final">
+  <p class="section-label">Compra segura · Acesso imediato</p>
+  <h2 class="section-title">Cuidar também é <em>aprender.</em></h2>
+  <p class="section-sub mt-16">
+    É quanto mais orientação você tiver, mais segurança, leveza e qualidade de vida você poderá oferecer para quem ama.
+  </p>
+
+  <div class="cta-box mt-32">
+    <div class="cta-box-icon">📖</div>
+    <h3>E-book Prático do Cuidador Familiar</h3>
+    <div class="cta-tags">
+      <span class="cta-tag">✓ Checklist</span>
+      <span class="cta-tag">✓ Comunidade</span>
+      <span class="cta-tag">✓ Aula bônus</span>
+    </div>
+    <div class="cta-price-old">De R$ 89,90</div>
+    <div class="cta-price-new"><sup>R$</sup> 49,90</div>
+    <a href="#" class="btn-cta">🎯 GARANTIR MEU ACESSO AGORA</a>
+    <p style="font-size:0.72rem; color:rgba(255,255,255,0.5); margin-top:12px;">Você estará a um passo de oferecer um cuidado com mais segurança e dignidade</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">SB CUIDADOS</div>
+  <p>© 2026 SB Cuidados · Todos os direitos reservados</p>
+  <p style="margin-top:8px;">
+    <strong>Aviso importante:</strong> Este e-book oferece orientações educativas e informativas. Não substitui, em nenhuma hipótese, o acompanhamento médico, profissional ou especializado.
+  </p>
+</footer>
+
+<script>
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const answer = item.querySelector('.faq-answer');
+    const isOpen = item.classList.contains('open');
+
+    // close all
+    document.querySelectorAll('.faq-item').forEach(el => {
+      el.classList.remove('open');
+      el.querySelector('.faq-answer').style.maxHeight = '0';
+    });
+
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+  }
+
+  // Intersection observer for animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'none';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.bonus-card, .content-item, .testimonial, .forwhom-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
